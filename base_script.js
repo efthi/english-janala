@@ -42,7 +42,7 @@ const displayLevelWord = (allWords) => {
             <p class="inter-fonts fonts-bold">Meaning / Pronounciation</p>
             <div class="tiro-bangla-regular text-2xl font-medium">"${getWord.meaning ? getWord.meaning : "অর্থ পাওয়া যায়নি"} / ${getWord.pronunciation ? getWord.pronunciation : "উচ্চারণ পাওয়া যায়নি"}"</div>
                 <div class="flex justify-between items-center">
-                    <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
+                    <button onclick="loadWordDetail(${getWord.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
                         <i class="fa-solid fa-circle-info"></i>
                     </button>
                     <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
@@ -82,6 +82,41 @@ const removeActiveClass= () => {
     console.log(lessonButtons);
     lessonButtons.forEach(btn => btn.classList.remove('active'));
 
+}
+
+const loadWordDetail = async (id) => {
+    const url =`https://openapi.programming-hero.com/api/word/${id}`;
+    console.log(id);
+    const res = await fetch(url);
+    const details = await res.json();
+
+    displayDetails(details.data);
+
+}
+
+const displayDetails= (SingleWord) => {
+    console.log(SingleWord);
+    const detailsBox =  document.getElementById("details-container");
+    detailsBox.innerHTML=`
+            <div>
+                <h2 class="text-2xl font-bold">${SingleWord.word} (<i class="fa-solid fa-microphone-lines"></i>${SingleWord.pronunciation} )</h2>
+                <div class="">
+                    <h2 class="font-bold">Meaning</h2>
+                    <p>${SingleWord.meaning}</p>
+                </div>
+                <div class="">
+                    <h2 class="font-bold">Example</h2>
+                    <p>${SingleWord.sentence}</p>
+                </div>
+                <div class="">
+                    <h2 class="font-bold">Synonym</h2>
+                    <span class="btn">Syn1</span>
+                    <span class="btn">Syn2</span>
+                    <span class="btn">Syn3</span>    
+                </div>
+            </div>
+    `;
+    document.getElementById("my_modal_5").showModal();
 }
 
 loadLessons();
