@@ -8,7 +8,10 @@
 */
 
 
-
+.active {
+  background-color: #422ad5;
+  color: white;
+}
 
 
 /** Google Fonts**/
