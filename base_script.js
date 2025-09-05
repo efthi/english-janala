@@ -110,14 +110,19 @@ const displayDetails= (SingleWord) => {
                 </div>
                 <div class="">
                     <h2 class="font-bold">Synonym</h2>
-                    <span class="btn">Syn1</span>
-                    <span class="btn">Syn2</span>
-                    <span class="btn">Syn3</span>    
+                    <div class="">${createElements(SingleWord.synonyms)}</div>  
                 </div>
             </div>
     `;
     document.getElementById("my_modal_5").showModal();
-}
+};
+
+const createElements = (arr) => {
+    const htmlElements = arr.map((el) => `<span class="btn">${el}</span>`);
+    return htmlElements.join(" ");
+};
+
+
 
 loadLessons();
 
