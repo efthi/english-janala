@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body onload="animateHero()">
     <header>
         <div class="navbar bg-base-100 shadow-sm">
             <div class="navbar-start">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </header>
-    <section class="hero_section flex flex-col-reverse md:flex-row gap-5 justify-between items-center py-5 w-11/12 mx-auto">
+    <section id="hero" class="hero_section flex flex-col-reverse md:flex-row gap-5 justify-between items-center py-5 w-11/12 mx-auto opacity-0 translate-y-10 transition-all duration-1000">
         <div class="content flex-1 text-center md:text-left">
             <h2 class="poppins-bold text-4xl font-bold mb-8"><span class="text-sky-400">English</span> is Easy!!</h2>
             <p class="tiro-bangla-regular">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। 

@@ -31,7 +31,7 @@ const displayLevelWord = (allWords) => {
      if(allWords.length == 0){
         wordContainer.innerHTML = `
         <div class="text-center col-span-full rounded-xl py-10 space-y-6">
-            <img class="mx-auto" src="./assets/alert-error.png" alt="alert_error">    
+            <img class="mx-auto border border-yellow-400" src="./assets/alert-error.png" alt="alert_error">    
             <p class="tiro-bangla-regular-italic text-xl text-gray-500 font-medium">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
             <h2 class="noto-serif-bengali-font text-4xl font-bold ">পরবর্তী বা পূর্ববর্তী Lesson এ যান</h2>
         </div>`;
@@ -165,4 +165,9 @@ function pronounceWord(word) {
   const utterance = new SpeechSynthesisUtterance(word);
   utterance.lang = "en-EN"; // English
   window.speechSynthesis.speak(utterance);
-}
+};
+
+function animateHero() {
+      const hero = document.getElementById("hero");
+      hero.classList.remove("opacity-0", "translate-y-10");
+    }
