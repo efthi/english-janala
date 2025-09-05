@@ -1,3 +1,5 @@
+
+
 const loadLessons = () => {
     fetch("https://openapi.programming-hero.com/api/levels/all") // promise of response
     .then((res) => res.json()) // promise of JSON data
@@ -46,10 +48,10 @@ const displayLevelWord = (allWords) => {
             <p class="inter-fonts fonts-bold">Meaning / Pronounciation</p>
             <div class="tiro-bangla-regular text-2xl font-medium">"${getWord.meaning ? getWord.meaning : "অর্থ পাওয়া যায়নি"} / ${getWord.pronunciation ? getWord.pronunciation : "উচ্চারণ পাওয়া যায়নি"}"</div>
                 <div class="flex justify-between items-center">
-                    <button onclick="loadWordDetail(${getWord.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
+                    <button onclick="loadWordDetail(${getWord.id})" class="btn tooltip bg-[#1A91FF10] hover:bg-[#1A91FF80]" data-tip="See Deatils">
                         <i class="fa-solid fa-circle-info"></i>
                     </button>
-                    <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80]">
+                    <button onclick="pronounceWord('${getWord.word}')" class="btn tooltip bg-[#1A91FF10] hover:bg-[#1A91FF80]" data-tip="Listen">
                         <i class="fa-solid fa-volume-high"></i>
                     </button>
                 </div>
@@ -156,3 +158,11 @@ document.getElementById("btn-search").addEventListener('click', ()=>{
     });
 
 });
+
+
+function pronounceWord(word) {
+    console.log(word);
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
