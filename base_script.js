@@ -5,7 +5,10 @@ const loadLessons = () => {
 };
 
 const loadLevelWord = (id) => {
+    manageSpinner(true);
+
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
+    
     fetch(url)
     .then((res) => res.json())
     .then((index) => {
@@ -30,6 +33,7 @@ const displayLevelWord = (allWords) => {
             <p class="tiro-bangla-regular-italic text-xl text-gray-500 font-medium">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
             <h2 class="noto-serif-bengali-font text-4xl font-bold ">পরবর্তী বা পূর্ববর্তী Lesson এ যান</h2>
         </div>`;
+        manageSpinner(false);
         return;
      }
 
@@ -53,7 +57,7 @@ const displayLevelWord = (allWords) => {
         `;
         wordContainer.append(card);
     });
-      
+    manageSpinner(false);
 };
 
 const displayLesson = (lessons) => {
@@ -122,7 +126,16 @@ const createElements = (arr) => {
     return htmlElements.join(" ");
 };
 
-
+const manageSpinner = (status) => {
+    if(status==true){
+        document.getElementById("spinner").classList.remove("hidden");
+        document.getElementById("word-container").classList.add("hidden");
+    }
+    else {
+        document.getElementById("word-container").classList.remove("hidden");
+        document.getElementById("spinner").classList.add("hidden");
+    }
+}
 
 loadLessons();
 
