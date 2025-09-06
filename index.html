@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- daisyui theme -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" /> 
-    <!-- googlefonts icon -->
+    <!-- google fonts icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- google fonts bangla -->
@@ -20,11 +20,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body onload="animateHero()">
+<body onload="animateHero()"> <!--animation function-->
     <header>
+        <!-- navbar starts -->
         <div class="navbar bg-base-100 shadow-sm">
             <div class="navbar-start">
                 <div class="dropdown">
+                    <!-- responsive nav menu -->
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden" aria-label="Open navigation menu">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
@@ -48,12 +50,14 @@
                         </li>
                     </ul>
                 </div>
+                <!-- logo area -->
                 <a href="" class="flex items-center gap-1">
                     <span class="text-lg font-bold">English</span>
                     <img src="./assets/logo.png" alt="">
                     <span class="galada-regular text-lg">জানালা</span>
                 </a>
             </div>
+            <!-- nav button area -->
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 space-x-4">
                     <li>
@@ -74,13 +78,16 @@
                 </ul>
             </div>
         </div>
+        <!-- navbar ends -->
     </header>
     <section id="hero" class="hero_section flex flex-col-reverse md:flex-row gap-5 justify-between items-center py-5 w-11/12 mx-auto opacity-0 translate-y-10 transition-all duration-1000">
+        <!-- hero section -->
         <div class="content flex-1 text-center md:text-left">
             <h2 class="poppins-bold text-4xl font-bold mb-8"><span class="text-sky-400">English</span> is Easy!!</h2>
             <p class="tiro-bangla-regular">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। 
                 আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, 
                 আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+            <!-- login form -->
             <div class="flex flex-col gap-4 mt-8">
                 <input type="text" placeholder="Enter Your Name" name="" class="input" />
                 <input type="password" placeholder="●●●●●" name="" class="input" />
@@ -88,11 +95,13 @@
             </div>
             
         </div>
+        <!-- hero image  -->
         <div class="image flex-1">
             <img src="./assets/hero-student.png" alt="" >
         </div>
     </section>
     <section>
+        <!-- lessons list buttons, lesson lists loads here -->
         <h2 class="poppins-bold text-4xl font-bold mb-8 text-center">
             <span class="text-sky-400">Let's</span> Learn Vocabularies
         </h2>
@@ -104,6 +113,7 @@
     </section>
 
     <section class="flex justify-center">
+        <!-- word search -->
         <div class="join">
             <div>
                 <label class="input validator join-item">
@@ -115,10 +125,12 @@
     </section>
 
     <section id="spinner" class="flex justify-center items-center py-10 hidden">
+       <!-- loading animation section -->
         <span class="loading loading-bars loading-xl"></span>
     </section>
 
     <section id="word-container" class="flex flex-col bg-gray-100 p-10 w-11/12 mx-auto my-10 md:grid grid-cols-3 gap-5">
+        <!-- word / content loader -->
         <div class="text-center bg-sky-100 col-span-full rounded-xl py-10 space-y-6">
             <p class="tiro-bangla-regular-italic text-xl text-gray-500 font-medium">
                 আপনি এখনো কোন Lesson Select করেন নি</p>
@@ -142,13 +154,14 @@
     </div>
     </dialog>
 
-    <footer class="shadow-red-800">
+    <footer>
+        <!-- footer area -->
         <div class="divider"></div>
         <div class="p-10 w-11/12 mx-auto my-10">
              <div>
                 <span class="flex items-center"><span class="font-bold">English </span><img src="./assets/logo.png" alt=""> <span class="galada-regular">জানালা</span> </span>
             </div>
-            <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex flex-row justify-between">
                 <div>
                     <p class="font-bold mt-5">ইংরেজি শিখুন সহজে</p>
                     <p><span class="poppins-light-italic mt-5">Developed by Efthaqur Alam,</span> Programming Hero Batch 12 &copy;2025</p>
@@ -165,6 +178,7 @@
             </div>
         </div>
     </footer>
+    <!-- JS script added here -->
     <script src="./base_script.js"></script>
 </body>
 </html>
